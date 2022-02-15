@@ -1,0 +1,18 @@
+<template>
+	<lightning-card>
+		<div class="slds-m-around_medium">
+			<h1>Passando valores para componentes Filhos</h1>
+			<p>Dados estáticos</p>
+
+			<c-produtos nome="Pao" preco="1,00" cod="123"></c-produtos>
+			<c-produtos nome="Hamburguer 180g" preco="5,00" cod="321"></c-produtos>
+			<c-produtos nome="Alface" preco="0,50" cod="222"></c-produtos>
+			<c-produtos nome="Tomate" preco="0,20" cod="333"></c-produtos>
+
+			<p>Dados Dinamicos</p>
+			<template for:each={listaProdutos} for:item="produto">
+				<c-produtos key={produto.codigo} nome={produto.nome} preco={produto.preco} cod={produto.codigo}></c-produtos>
+			</template>
+		</div>
+	</lightning-card>
+</template>
